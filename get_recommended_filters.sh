@@ -16,6 +16,7 @@ urls=(
  https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt
  https://adguardteam.github.io/HostlistsRegistry/assets/filter_21.txt
  https://raw.githubusercontent.com/badmojr/1Hosts/master/Pro/adblock.txt
+ 
 )
 
 # loop through the urls and download each file with curl
