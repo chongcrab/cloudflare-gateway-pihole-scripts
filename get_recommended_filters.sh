@@ -5,18 +5,10 @@ touch input.csv
 
 # declare an array of urls
 urls=(
- https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
- https://adguardteam.github.io/HostlistsRegistry/assets/filter_32.txt
- https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt
- https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Formats/GoodbyeAds-AdBlock-Filter.txt
- https://adguardteam.github.io/HostlistsRegistry/assets/filter_16.txt
- https://adguardteam.github.io/HostlistsRegistry/assets/filter_30.txt
- https://adguardteam.github.io/HostlistsRegistry/assets/filter_23.txt
- https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt
- https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt
- https://adguardteam.github.io/HostlistsRegistry/assets/filter_21.txt
- https://raw.githubusercontent.com/badmojr/1Hosts/master/Pro/adblock.txt
- 
+https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt
+https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+https://badmojr.github.io/1Hosts/Xtra/adblock.txt
+
 )
 
 # loop through the urls and download each file with curl
