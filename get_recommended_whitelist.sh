@@ -7,8 +7,6 @@ touch whitelist.csv
 
 # declare an array of urls
 urls=(
-  https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt
-https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 
 )
 
