@@ -7,7 +7,8 @@ touch input.csv
 urls=(
 https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt
 https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-https://badmojr.github.io/1Hosts/Xtra/adblock.txt
+https://raw.githubusercontent.com/badmojr/1Hosts/master/Lite/adblock.txt
+https://abpvn.com/filter/abpvn-GFo3O1.txt
 
 )
 
