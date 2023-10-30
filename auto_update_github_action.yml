@@ -64,4 +64,5 @@ jobs:
         PING_URL: ${{ secrets.PING_URL }}
       run: |
         curl "${{ env.PING_URL }}"
-    - uses: gautamkrishnar/keepalive-workflow@v1
+    - name: Keep alive
+uses: gautamkrishnar/keepalive-workflow@v1
