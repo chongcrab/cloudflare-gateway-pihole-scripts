@@ -43,3 +43,15 @@ jobs:
         CLOUDFLARE_ACCOUNT_EMAIL: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
         CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         CLOUDFLARE_LIST_ITEM_LIMIT: ${{ secrets.CLOUDFLARE_LIST_ITEM_LIMIT }}
+      - name: Generate
+        run: |
+          echo "Temp" >> ./temp.txt
+      - name: Keep
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: keep
+          skip_checkout: true
+          skip_dirty_check: true
+          push_options: '--force'
+          file_pattern: ./temp.txt
+          commit_message: Bump
