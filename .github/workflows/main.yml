@@ -11,6 +11,7 @@ on:
 jobs:
   cgps:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
     - uses: actions/checkout@v3
  
@@ -42,12 +43,12 @@ jobs:
         CLOUDFLARE_ACCOUNT_EMAIL: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
         CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         CLOUDFLARE_LIST_ITEM_LIMIT: ${{ secrets.CLOUDFLARE_LIST_ITEM_LIMIT }}
-      - name: Generate
-        run: |
+    - name: Generate
+      run: |
           echo "Temp" >> ./temp.txt
-      - name: Keep
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
+    - name: Keep
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
           branch: keep
           skip_checkout: true
           skip_dirty_check: true
