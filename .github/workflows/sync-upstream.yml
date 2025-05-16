@@ -1,0 +1,35 @@
+name: Sync Fork with Upstream
+
+on:
+  schedule:
+    # Chạy vào lúc 18:11 UTC hàng ngày (tương đương 1:11 sáng giờ Việt Nam)
+    - cron: '11 18 * * *'
+  workflow_dispatch: # Cho phép chạy thủ công từ tab Actions
+
+jobs:
+  sync_with_upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository (fork)
+        uses: actions/checkout@v4
+        with:
+          # Refetch all history so that upstream changes can be applied
+          fetch-depth: 0 
+
+      - name: Sync fork with upstream repository
+        uses: tgymnich/fork-sync@v1.9 # Sử dụng phiên bản mới nhất nếu có
+        with:
+          # Bắt buộc: Chủ sở hữu của kho lưu trữ gốc (upstream)
+          owner: mrrfv
+          # Bắt buộc: Nhánh trên kho lưu trữ gốc bạn muốn đồng bộ (ví dụ: main, master)
+          head: main 
+          # Bắt buộc: Nhánh trên fork của bạn mà bạn muốn cập nhật (ví dụ: main, master)
+          base: main
+          # Bắt buộc: Token để xác thực
+          token: ${{ secrets.GH_PAT }} # Sử dụng secret bạn đã tạo ở Bước 2
+          # Tùy chọn: Phương thức merge (merge, rebase, squash). Mặc định là 'merge'.
+          # merge_method: merge 
+          # Tùy chọn: Bỏ qua lỗi nếu có (true/false). Mặc định là false.
+          # ignore_fail: false
+          # Tùy chọn: Nếu bạn muốn tự động chấp nhận PR (yêu cầu PAT có quyền cao hơn)
+          # auto_approve: false
